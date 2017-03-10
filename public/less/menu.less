@@ -1,0 +1,60 @@
+//main:./main.less
+.menu-button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+    transition: all .5s;
+    z-index: 999;
+    .one,
+    .two,
+    .three {
+        user-select: none;
+        width: 100%;
+        height: 5px;
+        background: #898989;
+        margin: 6px auto;
+        backface-visibility: hidden;
+        -moz-transition-duration: .3s;
+        -o-transition-duration: .3s;
+        -webkit-transition-duration: .3s;
+        transition-duration: .3s;
+    }
+    &.active {
+        .one {
+            -moz-transform: rotate(45deg) translate(7px, 7px);
+            -ms-transform: rotate(45deg) translate(7px, 7px);
+            -webkit-transform: rotate(45deg) translate(7px, 7px);
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+        .two {
+            opacity: 0;
+        }
+        .three {
+            -moz-transform: rotate(-45deg) translate(8px, -10px);
+            -ms-transform: rotate(-45deg) translate(8px, -10px);
+            -webkit-transform: rotate(-45deg) translate(8px, -10px);
+            transform: rotate(-45deg) translate(8px, -10px);
+        }
+    }
+}
+
+.menu {
+    position: absolute;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    opacity: 0;
+    &.active {
+        z-index: 10;
+        opacity: 1;
+    }
+}
