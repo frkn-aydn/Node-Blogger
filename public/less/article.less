@@ -1,0 +1,33 @@
+//main:./main.less
+.article {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    min-height: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+    position: relative;
+    flex-wrap: wrap;
+    a {
+        text-decoration: none;
+        color: rgba(0, 0, 0, .7);
+        transition: all 0.5s;
+        &:hover {
+            color: #202020;
+        }
+    }
+    .header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, .7);
+        flex-wrap: wrap;
+        h1 {
+            font-size: 1.7em;
+            margin-right: 15px;
+        }
+        span {
+            font-style: italic;
+        }
+    }
+}
