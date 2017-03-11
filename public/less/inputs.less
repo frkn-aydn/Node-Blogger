@@ -1,0 +1,86 @@
+//main:./main.less
+.material-form-field-input {
+    padding: 0.5em 0;
+    font-size: 1.2em;
+    color: inherit;
+    font-family: inherit;
+    width: 100%;
+    background: transparent;
+    border-width: 0 0 1px 0;
+    -webkit-transition: 0.4s ease border-color;
+    transition: 0.4s ease border-color;
+}
+
+.material-form-field-input::-webkit-input-placeholder {
+    color: #202020;
+}
+
+.material-form-field-input:focus:valid,
+.material-form-field-input:focus:invalid {
+    border-bottom-width: 2px;
+}
+
+.material-form-field-input:focus:valid {
+    border-color: rgba(0, 0, 0, 0.7);
+}
+
+.material-form-field-input:focus:invalid {
+    border-color: #f00;
+}
+
+.material-form-field-input:focus::-webkit-input-placeholder,
+.material-form-field-input[value]::-webkit-input-placeholder,
+.material-form-field-input:valid::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.material-form-field-input:focus+.material-form-field-label,
+.material-form-field-input[value]+.material-form-field-label,
+.material-form-field-input:valid+.material-form-field-label {
+    -webkit-transform: translateY(-1.1em);
+    transform: translateY(-1.1em);
+}
+
+.material-form-field-input+.material-form-field-label {
+    -webkit-transition: 0.4s ease all;
+    transition: 0.4s ease all;
+    cursor: pointer;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    font-size: 1.5em;
+    left: 0;
+    top: 0.55em;
+    position: absolute;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.material-form-field-input:focus {
+    outline: none;
+}
+
+.btn {
+    max-width: 150px;
+    position: relative;
+    padding-left: 66px;
+    border: 1px solid #a6a9ac;
+    border-radius: 30px;
+    padding: 10px 34px;
+    background: #ffffff;
+    color: #a6a9ac;
+    transition: all .2s ease-in-out;
+    display: inline-block;
+    font-weight: normal;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1rem;
+    &:hover {
+        background: #212121;
+        border-color: #212121;
+        color: #ffffff;
+        text-decoration: none;
+    }
+}
