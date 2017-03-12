@@ -1,0 +1,73 @@
+//main:./main.less
+table {
+    text-align: left;
+    line-height: 40px;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    margin: 50px auto;
+    border-radius: .25rem;
+}
+
+thead tr:first-child {
+    background: #000;
+    color: #fff;
+    border: none;
+}
+
+th:first-child,
+td:first-child {
+    padding: 0 15px 0 20px;
+}
+
+.adder {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+    svg {
+        width: 25px;
+        height: 25px;
+        fill: #fff;
+        cursor: pointer;
+    }
+}
+
+thead tr:last-child th {
+    border-bottom: 3px solid #ddd;
+}
+
+tbody tr:hover {
+    background-color: rgba(0, 0, 0, .1);
+    cursor: default;
+}
+
+tbody tr:last-child td {
+    border: none;
+}
+
+tbody td {
+    border-bottom: 1px solid #ddd;
+    .buttons {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        svg {
+            width: 20px;
+            fill: #aaa;
+            cursor: pointer;
+            &.edit:hover {
+                fill: #0a79df;
+            }
+            &.delete:hover {
+                fill: #dc2a2a;
+            }
+        }
+    }
+}
+
+td:last-child {
+    text-align: right;
+    padding-right: 10px;
+}
