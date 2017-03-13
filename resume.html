@@ -99,7 +99,8 @@
                         </div>
                         <div class="experience-body">
                             <div class="explanation">
-                                Automated way of increasing users slack community members. Users can get join request and ask them some questions with this project.
+                                Automated way of increasing users slack community members. Users can get join request and ask them some questions with this
+                                project.
                             </div>
                             <div class="responsibilities">
                                 <ul>
@@ -118,18 +119,22 @@
                         </div>
                         <div class="experience-body">
                             <div class="explanation">
-                                A startup project I made in high school. In this project, users manage all facebook groups thay have. We got 10.000+ active user but Facebook didnt like this and API removed from Facebook.
+                                A startup project I made in high school. In this project, users manage all facebook groups thay have. We got 10.000+ active
+                                user but Facebook didnt like this and API removed from Facebook.
                             </div>
                             <div class="responsibilities">
                                 <ul>
                                     <li>Wring front-end development using Bootstrap and jQuery</li>
                                     <li>Connection to facebook and getting data.</li>
-                                    <li>Sharing all facebook groups in piece by piece and every single sharing has rondom time, rondom content because of facebook securety.</li>
+                                    <li>Sharing all facebook groups in piece by piece and every single sharing has rondom time,
+                                        rondom content because of facebook securety.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <p>Everything i know, i learned myself. I bought many courses. Sometimes i spent my days on Stackoverflow for basic problem, sometimes i read code libraries in github. I will continue to do this until I'm the best in the world. </p>
+                    <p>Everything i know, i learned myself. I bought many courses. Sometimes i spent my days on Stackoverflow
+                        for basic problem, sometimes i read code libraries in github. I will continue to do this until I'm
+                        the best in the world. </p>
                 </div>
             </div>
             <div class="menu-button">
@@ -187,7 +192,13 @@
             </div>
         </div>
     </div>
-    <script src="/public/js/main.js"></script>
+    <script>
+        document.querySelector(".menu-button").addEventListener("click", function (e) {
+            e.preventDefault();
+            document.querySelector(".menu-button").classList.toggle("active");
+            document.querySelector(".menu").classList.toggle("active");
+        })
+    </script>
 </body>
 
 </html>

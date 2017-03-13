@@ -1,0 +1,48 @@
+//main:./main.less
+.add_blog {
+    display: none;
+    flex-direction: column;
+    min-width: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    flex-wrap: wrap;
+    padding-top: 40px;
+    opacity: 0;
+    transition: all 0.4s;
+    &.active {
+        display: flex;
+        opacity: 1;
+    }
+    .goBack {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: -26px;
+        left: -7px;
+        cursor: pointer;
+        transition: all .5s;
+        z-index: 999;
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .blog-adder {
+        display: flex;
+        flex-direction: column;
+        input {
+            margin-bottom: 15px;
+        }
+        textarea {
+            margin-bottom: 15px;
+        }
+        #description {
+            margin-top: 15px;
+        }
+        #share {
+            margin-top: 25px;
+            align-self: flex-end;
+        }
+    }
+}
