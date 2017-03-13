@@ -1,7 +1,7 @@
 const express = require('express');
 const session = require('express-session')
 const exphbs  = require('express-handlebars');
-const routers = require("./router/index");
+const routers = require("./routers/index");
 const cookieParser = require('cookie-parser');
 const MongoStore = require("connect-mongo")(session);
 const bodyParser = require('body-parser')
@@ -15,7 +15,7 @@ app
     resave: false,
     saveUninitialized: false,
     secret: 'pijamalı hasta yağız şoföre çabucak güvendi',
-    store : new MongoStore({ url : "mongodb://127.0.0.1:27017/myblog"}),
+    store : new MongoStore({ url : process.env.BloggerDB || "mongodb://127.0.0.1:27017/BloggerDB"}),
     cookie : { maxAge: 180 * 60 * 1000 }
   }))
   .use(bodyParser.json())
