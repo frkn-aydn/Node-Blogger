@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> head}}
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="cover" style="background-image: url({{settings.cover_image}})"></div>
+        <div class="content">
+            <div class="contact">
+                <input id="email" type="email" class="material-form-field-input" placeholder="Email">
+                <input id="password" type="password" class="material-form-field-input" placeholder="Password">
+                <div class="footer">
+                    <button id="login" class="btn">Login</button>
+                </div>
+            </div>
+            {{> menu}}
+        </div>
+    </div>
+    <script>
+        document.querySelector(".menu-button").addEventListener("click", function (e) {
+            e.preventDefault();
+            document.querySelector(".menu-button").classList.toggle("active");
+            document.querySelector(".menu").classList.toggle("active");
+        })
+        document.getElementById("login").addEventListener("click", function(e){
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            if(!email || !password) return alert("Missing fields!");
+            e.target.innerHTML = "Please wait..."
+            var ajax = new XMLHttpRequest();
+            ajax.open("POST", "/api/login", true);
+            ajax.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+            ajax.onload = function(){
+                e.target.innerHTML = "Login"
+                var res = JSON.parse(ajax.response);
+                if(res.code == 0) return alert(res.error)
+                window.location.href = "/dashboard";
+            }
+            ajax.send(JSON.stringify({
+                email : email,
+                password : password
+            }))
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> head}}
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="cover register-area">
+            <h1>You dont have admin user.</h1>
+            <span>Please enter your email address and password.</span>
+        </div>
+        <div class="content">
+            <div class="contact">
+                <input id="email" type="email" class="material-form-field-input" placeholder="Email">
+                <input id="password" type="password" class="material-form-field-input" placeholder="Password">
+                <div class="footer">
+                    <button id="register" class="btn">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("register").addEventListener("click", function(e){
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            if(!email || !password) return alert("Missing fields!");
+            e.target.innerHTML = "Please wait..."
+            var ajax = new XMLHttpRequest();
+            ajax.open("POST", "/install", true);
+            ajax.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+            ajax.onload = function(){
+                e.target.innerHTML = "Register"
+                var res = JSON.parse(ajax.response);
+                if(res.code == 0) return alert(res.error)
+                window.location.href = "/dashboard";
+            }
+            ajax.send(JSON.stringify({
+                email : email,
+                password : password
+            }))
+        })
+    </script>
+</body>
+
+</html>
