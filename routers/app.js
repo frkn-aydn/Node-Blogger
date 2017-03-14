@@ -58,8 +58,13 @@ exports.app
             res.render("article", {
                 settings: settings,
                 admin: req.session.user ? req.session.user.admin : false,
-                article : article,
-                sharedDate : article.date.getDate() + "." + (article.date.getMonth() + 1) + "." + article.date.getFullYear()
+                article: article,
+                page_info: {
+                    title: article.title,
+                    description: article.description,
+                    keywords: article.keywords
+                },
+                sharedDate: article.date.getDate() + "." + (article.date.getMonth() + 1) + "." + article.date.getFullYear()
             })
         })
     })
