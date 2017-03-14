@@ -9,7 +9,7 @@ new Vue({
             menus: [
                 {
                     name: "DASHBOARD",
-                    url: "/dashboard.html"
+                    url: "/dashboard"
                 },
                 {
                     name : "LOGOUT",
