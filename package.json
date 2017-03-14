@@ -1,13 +1,13 @@
 {
-  "name": "blogging",
-  "version": "1.0.0",
+  "name": "node-blogger",
+  "version": "2.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "bundle-dashboard-head": "webpack -w --output-file ./public/bundles/dashboard-head.out.js --config ./webpack.config.js ./bundles/dashboard-head.js",
     "bundle-dashboard-footer": "webpack -w --output-file ./public/bundles/dashboard-footer.out.js --config ./webpack.config.js ./bundles/dashboard-footer.js"
   },
-  "author": "",
+  "author": "Muhammed Furkan AYDIN",
   "license": "ISC",
   "dependencies": {
     "babel-core": "^6.18.2",
