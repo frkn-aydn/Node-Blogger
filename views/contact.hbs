@@ -11,11 +11,11 @@
         <div class="content">
             <div class="contact">
                 <h1>{contact} me.</h1>
-                <input type="text" class="material-form-field-input" placeholder="Full name">
-                <input type="text" class="material-form-field-input" placeholder="Email adress">
-                <textarea placeholder="Message" rows="5" class="material-form-field-input"></textarea>
+                <input id="name" type="text" class="material-form-field-input" placeholder="Full name">
+                <input id="email" type="text" class="material-form-field-input" placeholder="Email adress">
+                <textarea id="message" placeholder="Message" rows="5" class="material-form-field-input"></textarea>
                 <div class="footer">
-                    <button class="btn">Send</button>
+                    <button id="send" class="btn">Send</button>
                 </div>
             </div>
             {{> menu}}
@@ -26,6 +26,27 @@
             e.preventDefault();
             document.querySelector(".menu-button").classList.toggle("active");
             document.querySelector(".menu").classList.toggle("active");
+        })
+        document.getElementById("send").addEventListener("click", function(e){
+            var email = document.getElementById("email").value;
+            var name = document.getElementById("name").value;
+            var message = document.getElementById("message").value;
+            if(!email || !name || !message) return alert("Missing fields!");
+            e.target.innerHTML = "Please wait..."
+            var ajax = new XMLHttpRequest();
+            ajax.open("POST", "/api/contact", true);
+            ajax.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+            ajax.onload = function(){
+                e.target.innerHTML = "Send"
+                var res = JSON.parse(ajax.response);
+                if(res.code == 0) return alert(res.error)
+                alert("Success !, I have your message now. I will answer you when i read. Thank you.")
+            }
+            ajax.send(JSON.stringify({
+                email : email,
+                name : name,
+                message : message
+            }))
         })
     </script>
 </body>
