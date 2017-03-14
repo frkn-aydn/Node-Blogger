@@ -4,4 +4,6 @@ const articles = require("./articles");
 
 
 exports.users = users.users; 
-exports.db = { blogs:db.articles, users:db.users };
+exports.articles = articles.articles;
+
+exports.db = { articles:db.articles, users:db.users };

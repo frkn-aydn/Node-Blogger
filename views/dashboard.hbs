@@ -25,10 +25,11 @@
         </div>
         <div class="content dashboard-area">
             <div class="dashboard">
-                <div v-if="noContent" class="noContent">
+                <div v-if="blogs && !articles.length" class="noContent">
                     <h3>There is no content. Please add your first blog post.</h3>
+                    <button class="btn" v-on:click="openAddBlog">Add your first blog post !</button>
                 </div>
-                <template v-if="blogs">
+                <template v-if="blogs && articles.length">
                     <table>
                         <thead>
                             <tr>
@@ -44,12 +45,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Atualizar página da equipe</td>
+                            <tr v-for="(article, key) in articles">
+                                <td><% key %></td>
+                                <td><% article.title %></td>
                                 <td>
                                     <div class="buttons">
-                                        <svg v-on:click="deleteBlog" class="delete" viewBox="0 0 24 24">
+                                        <svg v-on:click="deleteBlog(article.url)" class="delete" viewBox="0 0 24 24">
                                             <path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z">
                                         </svg>
                                     </div>

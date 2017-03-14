@@ -10,10 +10,20 @@
         <div class="cover" style="background-image: url({{settings.cover_image}})"></div>
         <div class="content">
             <div class="blog">
-                <a href="article.html" class="blog-item">
-                    <h2>What is Lorem Ipsum?</h2>
-                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </span>
+                {{#if articles.length}}
+                {{#each articles}}
+                <a href="/article/{{this.url}}" class="blog-item">
+                    <h2>{{this.title}}</h2>
+                    <span>{{this.description}}</span>
                 </a>
+                {{/each}}
+                {{else}}
+                <h1>There is no blog post yet.</h1>
+                <span>Please come back later.</span>
+                {{/if}}
+                
+                <!--
+                    [TODO]
                 <div class="pagination">
                     <a href="#" class="page">1</a>
                     <a href="#" class="page">2</a>
@@ -22,6 +32,7 @@
                     <a href="#" class="page">5</a>
                     <a href="#" class="page">6</a>
                 </div>
+                 -->
             </div>
             {{> menu}}
         </div>

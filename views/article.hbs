@@ -11,17 +11,11 @@
         <div class="content">
             <article class="article">
                 <div class="header">
-                    <h1>Whats going on golang ?</h1>
-                    <span>01.01.2017</span>
+                    <h1>{{article.title}}</h1>
+                    <span>{{sharedDate}}</span>
                 </div>
-                <div id="lipsum">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet viverra nunc. Donec eget sapien congue, euismod tortor
-                        non, semper orci. In hac habitasse platea dictumst. Nam a velit vitae tortor posuere maximus. Nullam
-                        fermentum nisi sit amet vehicula luctus. Quisque elementum tincidunt orci vitae euismod. Nulla bibendum,
-                        ligula eu dapibus pulvinar, purus felis pellentesque mi, in venenatis lorem felis sit amet lectus.
-                        Suspendisse placerat in sapien ut gravida.
-                    </p>
+                <div class="article-content">
+                    {{{article.detail}}}
                 </div>
                 <div id="disqus_thread"></div>
                 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
