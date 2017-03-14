@@ -43,3 +43,9 @@ exports.api
             })
         })
     })
+    .post("/share", (req, res)=>{
+        res.json({
+            code : 1,
+            result : "Your blog post successfly saved."
+        })
+    })
