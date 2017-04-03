@@ -24,7 +24,7 @@ exports.app
     })
     .get("/blogs", (req, res) => {
         database.db.articles.then(articles => {
-            articles.find({}).toArray().then(article => {
+            articles.find({}).sort( { date: -1 } ).toArray().then(article => {
                 res.render("blog", {
                     settings: settings,
                     page_info: {
